@@ -7,39 +7,52 @@ import Home from "./pages/home";
 import AccountCreated from "./Components/AcountCreated";
 import CreateSchoolSuccessFul from "./Components/CreatedSchoolSuccessFul";
 import CreatingSchool from "./Components/CreatingSchool";
+import PrivateRoutes from "./guards/privateroutes";
+import PublicRoutes from "./guards/publicroutes";
 
 const router = createBrowserRouter([
   {
-    path: "/signup",
-    element: <SignUp />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "_",
-    element: <AccountCreated />,
-  },
-  {
-    path: "/school-created",
-    element: <CreateSchoolSuccessFul />,
-  },
-  {
-    path: "/creating-school",
-    element: <CreatingSchool />,
-  },
-  {
-    path: "/createschool",
-    element: <CreateSchool />,
-  },
-  {
-    path: "/home",
-    element: <HomeLayout />,
+    element: <PublicRoutes />,
     children: [
       {
-        index: true,
-        element: <Home />,
+        path: "/",
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+    ],
+  },
+
+  {
+    element: <PrivateRoutes />,
+    children: [
+      {
+        path: "_",
+        element: <AccountCreated />,
+      },
+      {
+        path: "/school-created",
+        element: <CreateSchoolSuccessFul />,
+      },
+      {
+        path: "/creating-school",
+        element: <CreatingSchool />,
+      },
+      {
+        path: "/createschool",
+        element: <CreateSchool />,
+      },
+      {
+        path: "/home",
+        element: <HomeLayout />,
+        children: [
+          {
+            index: true,
+            element: <Home />,
+          },
+        ],
       },
     ],
   },

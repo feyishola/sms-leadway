@@ -2,6 +2,9 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { ControllerService } from "./authservice";
 // import { registerService } from "./authservice";
 
+// trying to make redux store persistent with the aid of localstorage. this is wrong but it kinda works
+const fakePersistentUserData = localStorage.getItem("userData");
+
 const initialState = {
   user: null,
   isLoading: false,
@@ -9,7 +12,7 @@ const initialState = {
   isSuccess: false,
   isVerified: false,
   isLoggedIn: false,
-  userData: null,
+  userData: fakePersistentUserData ? JSON.parse(fakePersistentUserData) : null,
   message: "",
 };
 

@@ -28,7 +28,8 @@ useEffect(() => {
   if (isVerified) {
     // toast.success("great!!!");
     alert("Great")
-     navigate("/login")
+     navigate("/")
+    //  navigate to login
   } else if (!isVerified && isError) {
     alert(message)
     // toast.error("Verification code is wrong!!!");

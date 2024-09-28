@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className=" flex flex-col gap-3 items-center py-20">
+      <button onClick={()=>{localStorage.removeItem("userData")}}>logout</button>
       <img src={noActivityIcon} alt="icon" width={180} height={180} />
 
       <h2 className="font-semibold text-center">

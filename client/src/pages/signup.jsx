@@ -193,7 +193,7 @@ function SignUp() {
 
             <div className="mt- flex gap-1 absolute bottom-3">
               <p>Already have an account?</p>
-              <Link to={"/sign-in"} className="text-[#5243AA] font-semibold">
+              <Link to={"/"} className="text-[#5243AA] font-semibold">
                 Login here
               </Link>
             </div>

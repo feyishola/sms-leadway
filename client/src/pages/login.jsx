@@ -5,7 +5,7 @@ import signInImg from "../assets/images/signIn-img.svg";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector,useDispatch } from "react-redux";
 import { login } from "../features/auth/authslice";
-import { toast } from "react-toastify";
+
 
 
 const Login = () => {
@@ -21,8 +21,6 @@ const Login = () => {
           navigate("/home");
         }, 2500);
       }, 400);
-    }else if (!isLoggedIn) {
-      toast.error("You no go fit enter here my brother!!!");
     }
   },[isLoggedIn,isVerified,userData])
 
@@ -154,7 +152,7 @@ const Login = () => {
           {/* Register Link */}
           <div className="mt-4 absolute bottom-5 flex gap-1">
             <p>Don't have an account?</p>
-            <Link to="/" className="text-[#5243AA] font-semibold">
+            <Link to="/signup" className="text-[#5243AA] font-semibold">
               Register here
             </Link>
           </div>

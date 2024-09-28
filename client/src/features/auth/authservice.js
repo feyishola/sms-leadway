@@ -74,6 +74,10 @@ class AuthService {
   async login(payload) {
     try {
       const response = await axios.post(`${this.#baseUrl}/login`, payload);
+      if (response.data.user) {
+        localStorage.setItem("userData", JSON.stringify(response.data));
+      }
+
       return response.data;
     } catch (error) {
       // Return a proper, serializable error message
