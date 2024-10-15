@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react";
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
 import {
   Dialog,
   DialogBackdrop,
@@ -16,7 +16,7 @@ export default function VerificationModal() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   
-  const [openModal, setOpenModal] = useState(true);
+  const [openModal] = useState(true);
 
   
   const [otp, setOtp] = useState(Array(6).fill(""));

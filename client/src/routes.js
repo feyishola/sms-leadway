@@ -9,6 +9,11 @@ import CreateSchoolSuccessFul from "./Components/CreatedSchoolSuccessFul";
 import CreatingSchool from "./Components/CreatingSchool";
 import PrivateRoutes from "./guards/privateroutes";
 import PublicRoutes from "./guards/publicroutes";
+import FramerPage from "./pages/framerpage";
+import LandingPage from "./pages/landingpage";
+import ThreePage from "./pages/threepage";
+import Charts from "./pages/charts";
+import ReactQuery from "./pages/reactquery";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +26,26 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp />,
+      },
+      {
+        path: "/framerpage",
+        element: <FramerPage />,
+      },
+      {
+        path: "/landingpage",
+        element: <LandingPage />,
+      },
+      {
+        path: "/threepage",
+        element: <ThreePage />,
+      },
+      {
+        path: "/recharts",
+        element: <Charts />,
+      },
+      {
+        path: "/reactquery",
+        element: <ReactQuery />,
       },
     ],
   },
